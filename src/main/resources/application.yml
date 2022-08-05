@@ -1,1 +1,25 @@
-
+server:
+  port: 11480
+ycbot:
+  channel:
+    base-url:
+    bot-id:
+    bot-token:
+    thread-id:
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:ysbot.db
+  jpa:
+    show-sql: true
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+logging:
+  file:
+    name: ysbot.log
+    max-size: 200MB
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%15.-15t] %-40.40logger{39} : %m%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%15.-15t] %-40.40logger{39} : %m%n"
