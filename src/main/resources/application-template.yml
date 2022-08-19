@@ -18,7 +18,7 @@ spring:
     open-in-view: false
 logging:
   file:
-    name: ysbot.log
+    name: logs/ysbot.log
     max-size: 200MB
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%15.-15t] %-40.40logger{39} : %m%n"
