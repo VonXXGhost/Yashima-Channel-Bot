@@ -13,10 +13,10 @@ class BotContextConfiguration {
     @Bean
     fun botContext(ycBotProperties: YcBotProperties) =
         BotContext(
-            ycBotProperties.channel!!.baseUrl,
-            ycBotProperties.channel!!.botId,
-            ycBotProperties.channel!!.botToken
+            ycBotProperties.channel.baseUrl,
+            ycBotProperties.channel.botId,
+            ycBotProperties.channel.botToken
         ).also {
-            it.threadId = ycBotProperties.channel!!.threadId
+            it.threadId = ycBotProperties.channel.threadId
         }
 }

@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 @ConfigurationProperties(prefix = "ycbot")
 data class YcBotProperties(
-    var channel: Channel? = null
+    var channel: Channel = Channel(),
+    var task: Task = Task(),
 )
 
 /**
@@ -23,4 +24,11 @@ data class Channel(
     var botId: String = "",
     var botToken: String = "",
     var threadId: String = "",
+)
+
+/**
+ * @property febriTalkCron febri talk任务计划
+ */
+data class Task(
+    var febriTalkCron: String = "",
 )
