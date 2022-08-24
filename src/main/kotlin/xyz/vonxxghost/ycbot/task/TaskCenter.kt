@@ -43,7 +43,7 @@ class TaskCenter {
      */
     fun withRetry(delay: Long, unit: TimeUnit, tryCount: Int = 0, task: () -> Unit): () -> Unit = {
         try {
-            task.invoke()
+            task()
         } catch (e: Exception) {
             if (tryCount >= MAX_RETRY_COUNT) {
                 log.warn(e) { "任务重试次数过多，已放弃" }

@@ -18,5 +18,7 @@ class BotContextConfiguration {
             ycBotProperties.channel.botToken
         ).also {
             it.threadId = ycBotProperties.channel.threadId
+            // init wsClient
+            it.wsClient.request()
         }
 }
