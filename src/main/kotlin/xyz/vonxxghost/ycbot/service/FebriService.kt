@@ -126,9 +126,8 @@ class FebriService {
 
     /**
      * 从获取talk列表开始执行任务
-     * 定时每周1、3、5中午11点开始
      */
-    @Scheduled(cron = "\${ycbot.task.febri-talk-cron:0 5,10,30 11 ? * 2,4,6}")
+    @Scheduled(cron = "\${ycbot.task.febri-talk-cron:0 10 11 ? * *}")
     fun startTaskFromTalkList() {
         start {
             log.info { "startTaskFromTalkList" }
